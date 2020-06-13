@@ -1,0 +1,217 @@
+{
+	"priority": 100,
+	"comment": "test",
+	"commands": [
+		{
+			"move": {
+				"x": 1.8,
+				"y": 0.6,
+				"yaw": -1.57,
+				"speed": 0.3
+			}
+		},
+		{
+			"move": {
+				"x": 1.8,
+				"y": 0.255,
+				"yaw": -1.57,
+				"speed": 0.3
+			}
+		},
+		{
+			"send_stm_cmd": {
+				"cmd": "SetLowDynamixelsPoses",
+				"cmd_params": "999229"
+			}
+		},
+		{
+			"move": {
+				"x": 1.65,
+				"y": 0.23,
+				"yaw": -1.57,
+				"speed": 0.3
+			}
+		},
+		{
+			"move": {
+				"x": 1.65,
+				"y": 0.16,
+				"yaw": -1.57,
+				"speed": 0.3
+			}
+		},
+		{
+			"send_stm_cmd": {
+				"cmd": "SetLowDynamixelsPoses",
+				"cmd_params": "999919"
+			}
+		},
+		{
+			"move": {
+				"x": 1.65,
+				"y": 0.23,
+				"yaw": -1.57,
+				"speed": 0.3
+			}
+		},
+		{
+			"move": {
+				"x": 1.8,
+				"y": 0.255,
+				"yaw": -1.57,
+				"speed": 0.3
+			}
+		},
+		{
+			"move": {
+				"x": 1.95,
+				"y": 0.23,
+				"yaw": -1.57,
+				"speed": 0.3
+			}
+		},
+		{
+			"move": {
+				"x": 1.95,
+				"y": 0.16,
+				"yaw": -1.57,
+				"speed": 0.3
+			}
+		},
+		{
+			"send_stm_cmd": {
+				"cmd": "SetLowDynamixelsPoses",
+				"cmd_params": "999139"
+			}
+		},
+		{
+			"move": {
+				"x": 1.95,
+				"y": 0.23,
+				"yaw": -1.57,
+				"speed": 0.3
+			}
+		},
+		{
+			"move": {
+				"x": 1.8,
+				"y": 0.255,
+				"yaw": -1.57,
+				"speed": 0.3
+			}
+		},
+		{
+			"move": {
+				"x": 1.65,
+				"y": 0.23,
+				"yaw": -1.57,
+				"speed": 0.3
+			}
+		},
+		{
+			"move": {
+				"x": 1.65,
+				"y": 0.16,
+				"yaw": -1.57,
+				"speed": 0.3
+			}
+		},
+		{
+			"send_stm_cmd": {
+				"cmd": "SetLowDynamixelsPoses",
+				"cmd_params": "999309"
+			}
+		},
+		{
+			"move": {
+				"x": 1.65,
+				"y": 0.23,
+				"yaw": -1.57,
+				"speed": 0.3
+			}
+		},
+		{
+			"move": {
+				"x": 1.8,
+				"y": 0.255,
+				"yaw": -1.57,
+				"speed": 0.3
+			}
+		},
+		{
+			"send_stm_cmd": {
+				"cmd": "SetLowDynamixelsPoses",
+				"cmd_params": "999009"
+			}
+		},
+		{
+			"move": {
+				"x": 1.8,
+				"y": 0.6,
+				"yaw": -1.57,
+				"speed": 0.3
+			}
+        },
+        
+        
+		{
+			"move": {
+				"x": 0.15,
+				"y": 0.55,
+				"yaw": 1.57,
+				"speed": 0.65
+			}
+		},
+		{
+			"move": {
+				"x": 0.15,
+				"y": 0.14,
+				"yaw": 1.57,
+				"speed": 0.65
+			}
+		},
+		{
+			"move": {
+				"x": 0.15,
+				"y": 0.14,
+				"yaw": 1.57,
+				"speed": 0.65
+			}
+		},
+		{
+			"send_stm_cmd": {
+				"cmd": "dropLeverWindsocks",
+				"cmd_params": ""
+			}
+		},
+		{
+			"sleep": {
+				"time": 0.2
+			}
+		},
+		{
+			"move": {
+				"x": 0.68,
+				"y": 0.14,
+				"yaw": 1.57,
+				"speed": 0.65
+			}
+		},
+		{
+			"sleep": {
+				"time": 0.5
+			}
+		},
+		{
+			"send_stm_cmd": {
+				"cmd": "hideLever",
+				"cmd_params": ""
+			}
+		},
+		{
+			"sleep": {
+				"time": 0.2
+			}
+		}
+	]
+}  

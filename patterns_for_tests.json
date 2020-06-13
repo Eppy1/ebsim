@@ -1,0 +1,363 @@
+{
+    "config_version": "2.0.0",
+    "patterns": {
+        "test": {
+            "priority": 100,
+            "comment": "test",
+            "commands": [
+                {
+                    "move": {
+                        "x": 0.248,
+                        "y": 1.078,
+                        "yaw": -1.05,
+                        "speed": 0.65
+                    }
+                },
+                {
+                    "send_stm_cmd": {
+                        "cmd": "SetLowDynamixelsPoses",
+                        "cmd_params": "200002"
+                    }
+                },
+                {
+                    "sleep": {
+                        "time": -24.5
+                    }
+                },
+                {
+                    "move": {
+                        "x": 0.272,
+                        "y": 0.989,
+                        "yaw": -0.79,
+                        "speed": 0.65
+                    }
+                },
+                {
+                    "move": {
+                        "x": 0.389,
+                        "y": 0.839,
+                        "yaw": -0.79,
+                        "speed": 0.65
+                    }
+                },
+                {
+                    "send_stm_cmd": {
+                        "cmd": "SetLowDynamixelsPoses",
+                        "cmd_params": "1ffff1"
+                    }
+                },
+                {
+                    "sleep": {
+                        "time": -24.5
+                    }
+                },
+                {
+                    "move": {
+                        "x": 0.656,
+                        "y": 0.821,
+                        "yaw": -2.09,
+                        "speed": 0.65
+                    }
+                },
+                {
+                    "send_stm_cmd": {
+                        "cmd": "SetLowDynamixelsPoses",
+                        "cmd_params": "ffff2f"
+                    }
+                },
+                {
+                    "sleep": {
+                        "time": -24.5
+                    }
+                },
+                {
+                    "move": {
+                        "x": 1.097,
+                        "y": 0.844,
+                        "yaw": -2.09,
+                        "speed": 0.65
+                    }
+                },
+                {
+                    "move": {
+                        "x": 1.266,
+                        "y": 0.844,
+                        "yaw": -2.09,
+                        "speed": 0.65
+                    }
+                },
+                {
+                    "send_stm_cmd": {
+                        "cmd": "SetLowDynamixelsPoses",
+                        "cmd_params": "fff21f"
+                    }
+                },
+                {
+                    "sleep": {
+                        "time": -24.5
+                    }
+                },
+                {
+                    "move": {
+                        "x": 1.547,
+                        "y": 0.778,
+                        "yaw": -2.09,
+                        "speed": 0.65
+                    }
+                },
+                {
+                    "move": {
+                        "x": 1.725,
+                        "y": 0.764,
+                        "yaw": -2.09,
+                        "speed": 0.65
+                    }
+                },
+                {
+                    "send_stm_cmd": {
+                        "cmd": "SetLowDynamixelsPoses",
+                        "cmd_params": "fff1ff"
+                    }
+                },
+                {
+                    "sleep": {
+                        "time": -24.5
+                    }
+                },
+                {
+                    "move": {
+                        "x": 1.805,
+                        "y": 0.6,
+                        "yaw": 0.52,
+                        "speed": 0.65
+                    }
+                },
+                {
+                    "move": {
+                        "x": 1.711,
+                        "y": 0.54,
+                        "yaw": 0.52,
+                        "speed": 0.65
+                    }
+                },
+                {
+                    "send_stm_cmd": {
+                        "cmd": "SetLowDynamixelsPoses",
+                        "cmd_params": "ff2fff"
+                    }
+                },
+                {
+                    "sleep": {
+                        "time": -24.5
+                    }
+                },
+                {
+                    "move": {
+                        "x": 1.702,
+                        "y": 0.394,
+                        "yaw": 0.52,
+                        "speed": 0.65
+                    }
+                },
+                {
+                    "send_stm_cmd": {
+                        "cmd": "SetLowDynamixelsPoses",
+                        "cmd_params": "ff1fff"
+                    }
+                },
+                {
+                    "sleep": {
+                        "time": -24.5
+                    }
+                },
+                {
+                    "move": {
+                        "x": 1.809,
+                        "y": 0.535,
+                        "yaw": 0.52,
+                        "speed": 0.65
+                    }
+                },
+                {
+                    "move": {
+                        "x": 1.894,
+                        "y": 0.54,
+                        "yaw": 0.52,
+                        "speed": 0.65
+                    }
+                },
+                {
+                    "send_stm_cmd": {
+                        "cmd": "SetLowDynamixelsPoses",
+                        "cmd_params": "f2ffff"
+                    }
+                },
+                {
+                    "sleep": {
+                        "time": -24.5
+                    }
+                },
+                {
+                    "move": {
+                        "x": 1.884,
+                        "y": 0.385,
+                        "yaw": 0.52,
+                        "speed": 0.65
+                    }
+                },
+                {
+                    "move": {
+                        "x": 1.814,
+                        "y": 0.291,
+                        "yaw": -1.57,
+                        "speed": 0.65
+                    }
+                },
+                {
+                    "sleep": {
+                        "time": -24.5
+                    }
+                },
+                {
+                    "move": {
+                        "x": 1.744,
+                        "y": 0.169,
+                        "yaw": -1.57,
+                        "speed": 0.65
+                    }
+                },
+                {
+                    "sleep": {
+                        "time": -24.5
+                    }
+                },
+                {
+                    "send_stm_cmd": {
+                        "cmd": "SetLowDynamixelsPoses",
+                        "cmd_params": "4ffff4"
+                    }
+                },
+                {
+                    "sleep": {
+                        "time": -24.5
+                    }
+                },
+                {
+                    "move": {
+                        "x": 1.744,
+                        "y": 0.26,
+                        "yaw": -1.57,
+                        "speed": 0.65
+                    }
+                },
+                {
+                    "send_stm_cmd": {
+                        "cmd": "SetLowDynamixelsPoses",
+                        "cmd_params": "0ffff0"
+                    }
+                },
+                {
+                    "sleep": {
+                        "time": -24.5
+                    }
+                },
+                {
+                    "move": {
+                        "x": 1.744,
+                        "y": 0.26,
+                        "yaw": 0.52,
+                        "speed": 0.65
+                    }
+                },
+                {
+                    "sleep": {
+                        "time": -24.5
+                    }
+                },
+                {
+                    "move": {
+                        "x": 1.804,
+                        "y": 0.22,
+                        "yaw": 0.52,
+                        "speed": 0.65
+                    }
+                },
+                {
+                    "send_stm_cmd": {
+                        "cmd": "SetLowDynamixelsPoses",
+                        "cmd_params": "f44fff"
+                    }
+                },
+                {
+                    "sleep": {
+                        "time": -24.5
+                    }
+                },
+                {
+                    "move": {
+                        "x": 1.804,
+                        "y": 0.31,
+                        "yaw": 0.52,
+                        "speed": 0.65
+                    }
+                },
+                {
+                    "send_stm_cmd": {
+                        "cmd": "SetLowDynamixelsPoses",
+                        "cmd_params": "f00fff"
+                    }
+                },
+                {
+                    "sleep": {
+                        "time": -24.5
+                    }
+                },
+                {
+                    "move": {
+                        "x": 1.804,
+                        "y": 0.31,
+                        "yaw": 2.62,
+                        "speed": 0.65
+                    }
+                },
+                {
+                    "sleep": {
+                        "time": -24.5
+                    }
+                },
+                {
+                    "move": {
+                        "x": 1.844,
+                        "y": 0.28,
+                        "yaw": 2.62,
+                        "speed": 0.65
+                    }
+                },
+                {
+                    "sleep": {
+                        "time": -24.5
+                    }
+                },
+                {
+                    "send_stm_cmd": {
+                        "cmd": "SetLowDynamixelsPoses",
+                        "cmd_params": "fff44f"
+                    }
+                },
+                {
+                    "sleep": {
+                        "time": -24.5
+                    }
+                },
+                {
+                    "move": {
+                        "x": 1.8,
+                        "y": 0.45,
+                        "yaw": 2.62,
+                        "speed": 0.65
+                    }
+                }
+            ]
+        }
+    }
+}

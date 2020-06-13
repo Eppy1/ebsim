@@ -1,0 +1,574 @@
+{
+	"config_version": "2.0.0",
+	"patterns": {
+        "move_to_port": {
+            "priority": 150,
+            "comment": "test",
+            "commands": [
+                {
+					"add_score": {
+						"comment": " TODO (fix it pls)",
+                        "score": 0,
+						"set_time": 1000
+					}
+                },
+                {
+                    "move": {
+                        "x": 0.244,
+                        "y": 1.177,
+                        "yaw": -0.52,
+                        "speed": 0.2
+                    }
+                },
+				{
+					"add_score": {
+						"comment": "2 points for putting the lighthouse on the rocky area before the game starts (TODO)",
+                        "score": 2,
+						"set_time": 120
+					}
+				}
+            ]
+        },
+        "starter_device_strategy_blue": {
+            "priority": -145,
+            "comment": "key w8",
+            "dependencies": [],
+            "commands": [
+              {
+                "wait_status": {
+                  "cmd": "StatusStarterDevice",
+                  "status": "4",
+                  "time": 10000,
+                  "set_time": 100
+                }
+              }
+            ]
+        },      
+        "big_port_take_top_pair": {
+            "priority": 129,
+            "comment": "test",
+            "commands": [
+                {
+                    "send_stm_cmd": {
+                        "cmd": "SetLowDynamixelsPoses",
+                        "cmd_params": "922999",
+                        "sync": false
+                    }
+                },
+                {
+                    "move": {
+                        "x": 0.39,
+                        "y": 1.256,
+                        "yaw": -0.52,
+                        "speed": 0.3
+                    }
+                },
+                {
+                    "move": {
+                        "x": 0.39,
+                        "y": 1.7,
+                        "yaw": -0.52,
+                        "speed": 0.5
+                    }
+                },
+                {
+                    "send_stm_cmd": {
+                        "cmd": "SetLowDynamixelsPoses",
+                        "cmd_params": "911999"
+                    }
+                },
+                {
+                    "sleep": {
+                        "comment": "#TAKE 1 1 2 2",
+                        "time": 0.5
+                    }
+                }
+            ]
+        },
+        "activate_lighthouse": {
+            "priority": 128,
+            "comment": "test",
+            "commands": [
+                {
+                    "move": {
+                        "x": 0.3,
+                        "y": 1.78,
+                        "yaw": -0.52,
+                        "speed": 0.5
+                    }
+                },
+                {
+                    "send_stm_cmd": {
+                        "cmd": "0xb1",
+                        "sync": false,
+                        "cmd_params": "1"
+                    }
+                },
+                {
+                    "move": {
+                        "x": 0.3,
+                        "y": 1.90,
+                        "yaw": -0.52,
+                        "speed": 1,
+                        "check_zero_speed": true,
+                        "off_avoidance": true,
+                        "obstacle": false
+                    }
+                },
+                {
+                    "sleep": {
+                        "time": 0.5
+                    }
+                },
+                {
+                    "move": {
+                        "x": 0.3,
+                        "y": 1.849,
+                        "yaw": -0.52,
+                        "speed": 0.4
+                    }
+                },
+                {
+                    "send_stm_cmd": {
+                        "cmd": "0xb2",
+                        "sync": false,
+                        "cmd_params": "1"
+                    }
+                },
+                {
+                    "add_score": {
+                      "comment": "for activating the lighthouse during the game (2+13)",
+                      "score": 13
+                    }
+                },
+                {
+                    "send_stm_cmd": {
+                        "cmd": "0xa2",
+                        "cmd_params": "1"
+                    }
+                }
+            ]
+        },
+        "big_port_take_bot_pair": {
+            "priority": 127,
+            "comment": "test",
+            "commands": [
+                {
+                    "send_stm_cmd": {
+                        "cmd": "SetLowDynamixelsPoses",
+                        "cmd_params": "999229",
+                        "sync": false
+                    }
+                },
+                {
+                    "move": {
+                        "x": 0.39,
+                        "y": 1.139,
+                        "yaw": -1.57,
+                        "speed": 0.5
+                    }
+                },
+                {
+                    "move": {
+                        "x": 0.39,
+                        "y": 0.80,
+                        "yaw": -1.57,
+                        "speed": 0.5
+                    }
+                },
+                {
+                    "send_stm_cmd": {
+                        "comment": "#TAKE 4 4 3 3",
+                        "cmd": "SetLowDynamixelsPoses",
+                        "cmd_params": "999119"
+                    }
+                }
+            ]
+        },
+        "lift_up_windsocks": {
+            "priority": 126,
+            "comment": "test",
+            "commands": [
+                {
+                    "move": {
+                        "x": 0.15,
+                        "y": 0.55,
+                        "yaw": 0.52,
+                        "speed": 0.4
+                    }
+                },
+                {
+                    "send_stm_cmd": {
+                        "cmd": "0xb3",
+                        "sync": false,
+                        "cmd_params": "1"
+                    }
+                },
+                {
+                    "move": {
+                        "x": 0.15,
+                        "y": 0.105,
+                        "yaw": 0.52,
+                        "obstacle": false,
+                        "speed": 0.2,
+                        "off_avoidance": true
+                    }
+                },
+                {
+                    "move": {
+                        "comment": "action (0.92 = 0.52 + 0.4)",
+                        "x": 0.72,
+                        "y": 0.105,
+                        "yaw": 0.92,
+                        "obstacle": false,
+                        "check_zero_speed": true,
+                        "speed": 0.9
+                    }
+                },
+                {
+                    "move": {
+                        "comment": "1.12 = 0.92 + 0.2",
+                        "x": 0.8,
+                        "y": 0.11,
+                        "yaw": 1.12,
+                        "obstacle": false,
+                        "speed": 0.4
+                    }
+                },
+                {
+                    "move": {
+                        "x": 0.75,
+                        "y": 0.4,
+                        "yaw": 0.52,
+                        "obstacle": false,
+                        "speed": 0.5
+                    }
+                },
+                {
+                    "send_stm_cmd": {
+                        "cmd": "0xb2",
+                        "sync": false,
+                        "cmd_params": "1"
+                    }
+                },
+                {
+                    "add_score": {
+                      "comment": "15 points if both windsocks are lifted up by the end of the game",
+                      "score": 15
+                    }
+                }
+            ]
+        },
+        "small_port_push_pair": {
+            "priority": 125,
+            "comment": "test",
+            "commands": [
+                {
+                    "move": {
+                        "x": 1.815,
+                        "y": 0.6,
+                        "yaw": 0.52,
+                        "speed": 0.5
+                    }
+                },
+                {
+                    "send_stm_cmd": {
+                        "cmd": "SetLowDynamixelsPoses",
+                        "cmd_params": "499994"
+                    }
+                },
+                {
+                    "move": {
+                        "x": 1.790,
+                        "y": 0.17,
+                        "yaw": 0.52,
+                        "speed": 0.3
+                    }
+                },
+                {
+                    "add_score": {
+                      "comment": "pair",
+                      "score": 6
+                    }
+                },
+                {
+                    "move": {
+                        "comment": "move some back #DROP 2 1",
+                        "x": 1.790,
+                        "y": 0.22,
+                        "yaw": 0.52,
+                        "speed": 0.4
+                    }
+                },
+                {
+                    "send_stm_cmd": {
+                        "cmd": "SetLowDynamixelsPoses",
+                        "cmd_params": "099990"
+                    }
+                }
+            ]
+        },
+
+        "small_port_drop23": {
+            "priority": 124,
+            "comment": "test",
+            "commands": [
+                {
+                    "move": {
+                        "comment": "rotation",
+                        "x": 1.8,
+                        "y": 0.27,
+                        "yaw": 2.62,
+                        "speed": 0.4
+                    }
+                },
+                {
+                    "sleep": {
+                        "time": 0.2
+                    }
+                },
+                {
+                    "send_stm_cmd": {
+                        "cmd": "SetLowDynamixelsPoses",
+                        "cmd_params": "944999"
+                    }
+                },
+                {
+                    "move": {
+                        "x": 1.8,
+                        "y": 0.35,
+                        "yaw": 2.62,
+                        "speed": 0.4
+                    }
+                },
+                {
+                    "add_score": {
+                      "comment": "pair",
+                      "score": 6
+                    }
+                },
+                {
+                    "sleep": {
+                        "time": 0.1
+                    }
+                },
+                {
+                    "send_stm_cmd": {
+                        "cmd": "SetLowDynamixelsPoses",
+                        "cmd_params": "900999"
+                    }
+                },
+                {
+                    "move": {
+                        "x": 1.8,
+                        "y": 0.40,
+                        "yaw": 2.62,
+                        "speed": 0.4
+                    }
+                },
+                {
+                    "move": {
+                        "x": 1.8,
+                        "y": 0.36,
+                        "yaw": 4.71,
+						"speed": 0.3,
+						"dist": 0.019
+                    }
+                },
+                {
+                    "sleep": {
+                        "time": 1
+                    }
+                },
+                {
+                    "send_stm_cmd": {
+                        "cmd": "SetLowDynamixelsPoses",
+                        "cmd_params": "999449"
+                    }
+                },
+                {
+                    "move": {
+                        "x": 1.8,
+                        "y": 0.75,
+                        "yaw": 4.71,
+                        "speed": 0.4
+                    }
+                },
+                {
+                    "add_score": {
+                      "comment": "pair",
+                      "score": 6
+                    }
+                },
+                {
+                    "send_stm_cmd": {
+                        "cmd": "SetLowDynamixelsPoses",
+						"cmd_params": "999009",
+						"sync": false
+                    }
+                }
+            ]
+        },
+
+		"grip_bouys": {
+			"priority": 123,
+			"commands":[
+				{
+					"move": {
+						"x": 0.55,
+						"y": 0.4,
+						"yaw": 3.14,
+						"speed": 0.4,
+						"dist": 0.15
+					}
+				},
+				{
+					"move": {
+						"x": 0.4,
+						"y": 0.4,
+						"yaw": 3.14,
+						"speed": 0.3,
+						"obstacle": false,
+						"dist": 0.06
+					}
+				},
+				{
+					"move": {
+						"x": 0.09,
+						"y": 0.4,
+						"yaw": 3.14,
+						"speed": 0.15,
+                        "check_zero_speed": true,
+                        "off_avoidance": true,
+                        "obstacle": false
+					}
+				},
+				{
+					"sleep": {
+						"time": 1
+					}
+				},
+                {
+                    "send_stm_cmd": {
+                        "cmd": "0xb5",
+                        "cmd_params": ""
+                    }
+                },
+				{
+					"sleep": {
+						"time": 10
+					}
+				}
+			]
+		},
+		"drop_bouys": {
+			"priority": 122,
+			"commands":[
+				{
+					"move": {
+						"x": 0.2,
+						"y": 0.4,
+						"yaw": 1.57,
+						"speed": 0.3,
+						"off_avoidance": true,
+						"obstacle": false
+					}
+				},
+				{
+					"move": {
+						"x": 0.2,
+						"y": 0.77,
+						"yaw": 1.57,
+						"speed": 0.3,
+						"off_avoidance": true,
+						"obstacle": false
+					}
+				},
+				{
+					"move": {
+						"x": 0.2,
+						"y": 0.8,
+						"yaw": 1.57,
+						"speed": 0.05,
+						"off_avoidance": true,
+						"obstacle": false,
+						"corr_enable":false
+					}
+				},
+                {
+                    "send_stm_cmd": {
+                        "cmd": "0xb7",
+                        "cmd_params": ""
+                    }
+                },
+                {
+                    "sleep": {
+                        "time": 3
+                    }
+				},
+                {
+                    "add_score": {
+                      "comment": "(2*3 + 2) #PUT5 red green red green red",
+                      "score": 8
+                    }
+                },
+                {
+                    "send_stm_cmd": {
+                        "cmd": "0xb6",
+                        "cmd_params": ""
+                    }
+                }
+			]
+		},
+        "anchor_south": {
+            "priority": 120,
+            "comment": "TODO",
+            "commands": [
+                {
+                    "move": {
+                        "x": 0.2,
+                        "y": 0.65,
+                        "yaw": 1.57,
+                        "speed": 0.5
+                    }
+                },
+                {
+                    "add_score": {
+                      "comment": "M[X] = (10+5)/2 #FINISH",
+                      "score": 7
+                    }
+                },
+                {
+                    "sleep": {
+                        "time": 125
+                    }
+                }
+            ]
+        },
+        "anchor_north": {
+            "priority": -120,
+            "comment": "TODO",
+            "commands": [
+                {
+                    "move": {
+                        "x": 0.2,
+                        "y": 1.66,
+                        "yaw": 4.71,
+                        "speed": 0.5
+                    }
+                },
+                {
+                    "add_score": {
+                      "comment": "M[X] = (10+5)/2 #FINISH",
+                      "score": 7
+                    }
+                },
+                {
+                    "sleep": {
+                        "time": 125
+                    }
+                }
+            ]
+        }
+    }
+}

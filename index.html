@@ -1,0 +1,106 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://use.fontawesome.com/a99e6a1c96.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+
+        <script src="TemplateData/UnityProgress.js"></script>
+        <script src="Build/UnityLoader.js"></script>
+        <script>
+          var unityInstance = UnityLoader.instantiate("unityContainer", "Build/wgl.json", {onProgress: UnityProgress});
+        </script>
+
+        <script src="constants.js"></script>
+        <script src="board.js"></script>
+        <script src="script.js"></script>
+        <script src="gui.js"></script>
+    </head>
+    <body>
+        <div class="split left">
+                <div style="padding-left:1em">
+                    <button onclick = 'alert("Ещё не работает")'><i class="fa fa-upload"></i></button>
+                    <button onclick = "download(JSON.stringify(strategy, null, '\t'), '1-str.json', 'json')"><i class="fa fa-download"></i></i></button>
+                </div>
+                <div style="padding-left:1em">
+                    <span id='coords'></span>
+                    <span style='display:inline-block; width:8em;' id='time'><b>TIME: </b> 0</span>
+                    <span style='display:inline-block; width:12em;' id='score'><b>SCORE:</b> 0 <span style='color:gray;'>(abs max 129)</span> </span>
+                </div>
+                <div id="sketch-holder" style="display: none;"></div>
+                <div id="unityContainer" style="width: 100%; height: 640px; margin-bottom: 1em;"></div>
+                <center>                    
+                    <button class='play_button' style='width: 4.8em; height: 2.2em;' onclick = "unityInstance.SendMessage('Comm', 'restart');"> reset </button>
+                    <button class='play_button' style='width: 4.8em; height: 2.2em;' onclick = "publishScore(-total_score); unityInstance.SendMessage('Comm', 'setScenario', convertToNewFormat(adaptStrategy(strategy))); "> <b>START!</b> </button>
+                    <button class='play_button' style='width: 7.2em; height: 2.2em;' id = "tBouy" onclick = "toggleBouy()"> Show bouy IDs </button>
+                    <button class='play_button' style='width: 7.2em; height: 2.2em;' id = "tPath" onclick = "togglePath()"> Show path</button>
+                </center>
+
+                <!-- Trigger/Open The Modal -->
+                <button id="readme_btn" style="margin: 1em;">Read Me!</button>
+        </div>
+          
+        <div class="split right">
+            <table class="patterns-and-commands">
+                <tr>
+                    <td>
+                        <h2>patterns:</h2>
+
+                        <div id="patterns" style="overflow-y: scroll; overflow-x:hidden; height:90%;"></div>
+
+                    </td>
+                    <td>
+                        <h2 contenteditable="true" id="current_pattern_name">selected pattern</h2>
+                        <span style="display: inline-block; width: 5em;">priority:</span><br>
+                        <input id="current_pattern_priority" type="number" oninput="updPriority()" style="width: 4em; height: 2em" value="1" /><br>
+
+                        <span style="display: inline-block; width: 5em;">comment:</span><br>
+                        <input id="current_pattern_comment" oninput="updComment()" type="text" style="width: 100%; height: 2em" value="test comment" /><br><br>
+                        
+                        <span style="display: inline-block; width: 5em;">commands:</span>
+                        
+                        <div style="overflow-y: scroll; overflow-x:hidden; height:75%;">
+                            <div id="commands"></div>
+
+                            <div class="add_cmd">
+                                <h3 style="margin-bottom: .1em; padding-bottom: .1em;">new command</h3><br>
+                                <button onclick="addNewCommand('move'); showPatternInfo(current_pattern_name);">move</button>
+                                <button onclick="addNewCommand('send_stm_cmd'); showPatternInfo(current_pattern_name);">send_stm_cmd</button>
+                                <button onclick="addNewCommand('sleep'); showPatternInfo(current_pattern_name);">sleep</button>
+                                <button onclick="addNewCommand('add_score'); showPatternInfo(current_pattern_name);">add_score</button>
+                                <button onclick="addNewCommand('wait_status'); showPatternInfo(current_pattern_name);">wait_status</button>
+                                <button onclick="addNewCommand('empty'); showPatternInfo(current_pattern_name);">empty</button>
+                            </div>
+                            <br><br>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+
+
+                <!-- The Modal -->
+        <div id="readme_popup" class="modal">
+                    <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close" id="readme_close">&times;</span>
+                <br>
+                <div style="padding: 1.5em; font-family: 'Ubuntu Mono', monospace; line-height: 1.5;">
+                    <p>Для интерактивного редактирования точек: тык на нужном <b>`move`</b>, затем клик на поле.</p>
+                    
+                    <p>Вращение робота &ndash; <b>Z</b>, <b>X</b> на клавиатуре.</p>
+
+                    <p>Вращение камеры &ndash; <b>ПКМ</b>, пониже &ndash; <b>shift</b>, повыше &ndash; <b>space</b>, перемещение &ndash; <b>WASD</b>.</p>
+
+                    <p>Сейчас JSON с самыми последними паттернами железобетонно вшит в приложение, но отредактированный файл с паттернами модно скачать.</p>
+
+                    <p>Кнопка <b>Show path</b> пока что работает труднообъяснимым образом.</p>
+
+                    <p>Изменения в стратегии сразу применяются к симуляции.</p>
+                </div>
+            </div>
+        </div>        
+    </body>
+</html>
